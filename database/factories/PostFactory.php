@@ -19,7 +19,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'author_id' => Author::inRandomOrder()->first()?->id ?? Author::factory(), // handles relationship
+            'author_id' => Author::inRandomOrder()->first()?->id ?? Author::factory()->create()->id, // handles relationship
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph(4),
         ];

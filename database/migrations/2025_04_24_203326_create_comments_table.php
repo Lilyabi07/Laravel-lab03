@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->text('content'); // Content of the comment.
+            $table->text('comment'); //  Required fro text to be generated within it
+          //  $table->text('content'); // Content of the comment.
             $table->foreignId('post_id')->constrained()->onDelete('cascade'); // Foreign key to the post.
             $table->timestamps();
             $table->string('commenter_name');
