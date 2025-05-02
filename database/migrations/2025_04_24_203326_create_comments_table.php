@@ -16,6 +16,8 @@ return new class extends Migration
             $table->text('content'); // Content of the comment.
             $table->foreignId('post_id')->constrained()->onDelete('cascade'); // Foreign key to the post.
             $table->timestamps();
+            $table->string('commenter_name');
+
                 });
     }
 
