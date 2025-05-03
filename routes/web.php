@@ -5,8 +5,10 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/posts');             //view('welcome');
 });
+
+//OR, A cleaner route option-> Route::get('/', [PostController::class, 'index']);
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
