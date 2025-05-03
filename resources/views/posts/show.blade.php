@@ -1,4 +1,4 @@
-<!-- show.blade.php : will display a single blog post and its comments, as well as a form to submit a new comment. -->
+<!-- show.blade.php : displays a single blog post and its comments, and a form to submit a new comment. -->
 
 <!DOCTYPE html>
 <html>
@@ -46,11 +46,16 @@
         @csrf
         <div>
             <label for="commenter_name">Your Name:</label><br>
-            <input type="text" name="commenter_name" id="commenter_name" value="{{ old('commenter_name') }}">
+            <input type="text" name="commenter_name" id="commenter_name" value="{{ old('commenter_name') }}" required>
         </div>
         <div>
             <label for="comment">Comment:</label><br>
-            <textarea name="comment" id="comment">{{ old('comment') }}</textarea>
+            <textarea name="comment" id="comment" required>{{ old('comment') }}</textarea>
         </div>
-        <div>
-            <button
+        <div style="margin-top: 10px;">
+            <button type="submit" style="background-color: #4CAF50; color: white; padding: 6px 12px; border: none; border-radius: 4px;">Save</button>
+            <a href="{{ url('/posts') }}" style="background-color: #ccc; color: black; padding: 6px 12px; text-decoration: none; border-radius: 4px; margin-left: 10px;">Cancel</a>
+        </div>
+    </form>
+</body>
+</html>
