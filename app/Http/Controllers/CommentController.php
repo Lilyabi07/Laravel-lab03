@@ -18,10 +18,10 @@ class CommentController extends Controller
 
         $post = Post::findOrFail($postId);
 
-        $post->comments()->create([
-            'commenter_name' => $validated['commenter_name'],
-            'comment' => $validated['comment'],
-        ]);
+ $post->comments()->create([
+        'commenter_name' => $validated['commenter_name'],
+        'comment' => $validated['comment'],
+    ]);
         return redirect()->route('posts.show', $postId)
                          ->with('success', 'Comment added successfully!');
     }

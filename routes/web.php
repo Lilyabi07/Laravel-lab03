@@ -8,9 +8,8 @@ Route::get('/', function () {
     return redirect('/posts');             //view('welcome');
 });
 
-//OR, A cleaner route option-> Route::get('/', [PostController::class, 'index']);
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
-Route::post('/posts/{id}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index'); // show all posts
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show'); // to show a single post
+Route::post('/posts/{id}/comments', [CommentController::class, 'store'])->name('comments.store'); // this handles comment submissions
 
