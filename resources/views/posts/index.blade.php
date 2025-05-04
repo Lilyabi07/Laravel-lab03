@@ -14,18 +14,9 @@
             <p>{{ Str::limit($post->content, 100) }}</p>
         </div>
     @endforeach
-</body>
-</html>
-📄 Step 3: Create show.blade.php
-This view shows a single post with its comments. Create the file:
+</body</html>
 
-bash
-Copy code
-resources/views/posts/show.blade.php
-With this content:
 
-blade
-Copy code
 <!-- resources/views/posts/show.blade.php -->
 
 <!DOCTYPE html>
