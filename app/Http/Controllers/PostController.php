@@ -11,14 +11,14 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::with('author')->latest()->get();
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts')); // for listing posts
     }
 
     // GET /posts/{id}
     public function show($id)
     {
         $post = Post::with(['author', 'comments'])->findOrFail($id);
-        return view('posts.show', compact('post'));
+        return view('posts.show', compact('post')); //for showing a specific post (and its comments)
     }
 }
 

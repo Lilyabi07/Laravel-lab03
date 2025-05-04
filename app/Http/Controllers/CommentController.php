@@ -11,13 +11,14 @@ class CommentController extends Controller
     // POST /posts/{id}/comments
     public function store(Request $request, $postId)
     {
+        //basic validation (not leaving a section empty)
         $validated = $request->validate([
             'commenter_name' => 'required|string|max:255',
             'comment' => 'required|string',
         ]);
 
+        // for saving a new comment
         $post = Post::findOrFail($postId);
-
  $post->comments()->create([
         'commenter_name' => $validated['commenter_name'],
         'comment' => $validated['comment'],

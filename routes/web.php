@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 
+
+//These define the URLs the app responds to:
+
+
 Route::get('/', function () {
     return redirect('/posts');             //view('welcome');
 });
